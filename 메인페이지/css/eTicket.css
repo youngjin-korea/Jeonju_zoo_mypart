@@ -1,0 +1,514 @@
+
+@import url(./layout_base.css);
+@font-face {
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GongGothicMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 공통 부분 */
+header, #container{
+    font-family: 'GongGothicMedium';
+    font-size: 16px;
+    height:100%;
+    color:#444;
+    white-space: normal;
+    word-break: normal;
+    word-wrap: break-word;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+*{
+    margin:0 auto; padding:0;
+}
+
+
+div {
+    display: block;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+    font-size: inherit;
+}
+ul,ol,li{
+    list-style: none;
+}
+a{ text-decoration: none; }
+a:link,a:visited{color: black;}
+a:hover,a:active{color:#444 }
+
+.clear::after{
+    content:'';
+    display: block;
+    clear:both;
+}
+img{ border:none; vertical-align: middle; }
+.hdd{
+    font-size: 0;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+    visibility: hidden;
+    position: absolute;
+    top:0; left:0;
+}
+
+
+.box_inner{
+    width:1050px;
+    margin:0 auto;
+}
+/* skipnavi */
+/* 
+    웹 접근성을 위한 skipnavi
+    https://nuli.navercorp.com/community/article/1132804
+ */
+.skipnavi{
+    position: absolute;
+    left:0; top:-50px;
+    width:100%;
+    text-indent: -9999px;
+    font-size: 0;
+    z-index: 999;
+}
+.skipnavi > li > a:focus, .skipnavi > li > a:active{
+    position: absolute;
+    width:100%;
+    left:0; top:50px;
+    display: block;
+    padding: 5px;
+    text-align: center;
+    text-indent: 0px;
+    font-size: 12px;
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+
+/* ------메인 페이지(index.html) 시작------ */
+/* 헤더 */
+header{
+    position: fixed;
+    top:0; left:0;
+    width:100%;
+    height: 150px;
+    background:white;
+    z-index: 100;
+}
+
+header > .header_area > h1{
+    float:left;
+    padding:45px;
+}
+header > .header_area > h1 > a{
+    display: block;
+    width:290px;
+    height:72px;
+    background:url(../zooimages/zoo_logo.svg) no-repeat;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+.closePop { font-size: 0; }
+.header_cont{
+    float:right;
+    /* width:780px; */
+}
+.header_cont .util{
+    text-align: right;
+    padding-top:10px;
+}
+.header_cont .util li{ display:inline; }
+.header_cont .util li:first-child::after{
+    content:'|';
+    display: inline-block;
+    padding:0 10px;
+    font-size: 10px;
+    color: black;
+    position: relative;
+    top:-2px;
+}
+.header_cont .util li a{
+    font-size: 14px;
+    color:black;
+}
+.header_cont .gnb{
+    float:right;
+    box-sizing: border-box;
+    padding-top: 20px;
+}
+.header_cont .gnb li{ float:left; }
+.header_cont .gnb li a{ display: block; padding:26px 30px; font-size: 23px; }
+.header_cont .gnb li:last-child a{ padding-right: 0; }
+.gnb_depth{
+    position: absolute;
+    left:0;
+    top:113px;
+    width:100%;
+    background:rgba(250,100,0,0.85);
+    z-index:100;
+    display: none;
+}
+.gnb_depth .submenu_list{ width:1050px; margin:0 auto; text-align: left; box-sizing: border-box; }
+
+.gnb_depth2_1 .submenu_list{ padding-left:480px; }
+.gnb_depth2_2 .submenu_list{ padding-left:600px; }
+.gnb_depth2_3 .submenu_list{ padding-left:730px; }
+.gnb_depth2_4 .submenu_list{ padding-left:945px; }
+
+.gnb_depth .submenu_list li{ display: inline; }
+.gnb_depth .submenu_list li a{ display: inline-block; padding:20px; }
+.gnb_depth .submenu_list li:last-child a{
+    padding-right: 0;
+}
+#container {
+    position: absolute;
+    padding-bottom: 70px;
+    width: 100%;
+    height: 100%;
+}
+.eTicket {
+    position: absolute;
+    /* box-sizing: border-box; */
+    text-align: center;
+    width: 100%;
+    height: 240px;
+    padding-top: 30px;
+    top: 300px;
+    /* left: 300px; */
+}
+.eTicket .inner {
+    position: relative;
+    box-sizing: border-box;
+    /* display: block; */
+    width: 1280px;
+    max-width: 1280px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+.eTicket .inner h3 {
+    color: #000;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+.eTicket .inner p {
+    letter-spacing: 0.7em;
+}
+.reservation {
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+    top: 600px;
+    width: 100%;
+    height: 100%;
+}
+.reservation .resContainer {
+    position: relative;
+    box-sizing: border-box;
+    /* width: 700px; */
+    height: 100px;
+}
+.reservation .resContainer ul {
+    position: relative;
+    box-sizing: border-box;
+    /* margin: 0 auto; */
+    list-style: none;
+    width: 65%;
+    height: 100%;
+    /* left: 300px; */
+    z-index: 2;
+}
+.reservation .resContainer li {
+    position: relative;
+    box-sizing: border-box;
+    float: left;
+    /* margin: 0 150px; */
+    width: 50%;
+    height: 50px;
+    max-height: 60px;
+}
+.reservation .resContainer a {
+    position: relative;
+    display: block;
+    font-size: 30px;
+    color: olivedrab;
+    line-height: 250%;
+    width: 98%;
+    height: 80px;
+    border: 3px solid olivedrab;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: none;
+    transition: 0.3s;
+}
+.reservation .resContainer a:hover {
+    color: #fff;
+    background-color: olivedrab;
+}
+.buyTicket {
+    position: relative;
+    box-sizing: border-box;
+    bottom: 25.06%;
+    width: 100%;
+    height: 100%;
+}
+.buyTicket .buyInner {
+    position: relative;
+    background-size: 1106px 729px;
+    width: 67%;
+    height: 80%;
+    bottom: 4.45%;
+}
+.buyTicket .buyInner::after {
+    content: "";
+    position: absolute;
+    background: url(../zooimages/eTicket03.png) no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: -9999;
+
+}
+.buyTicket .buyInner .buyCon {
+    float: right;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 5px;
+    /* border: 1px solid #999; */
+    width: 30%;
+    height: 70%;
+    top: 50px;
+    right: 70px;
+}
+.buyTicket .buyInner .buyCon select {
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    letter-spacing: 0.1em;
+    font-size: 18px;
+    border-radius: 10px;
+    border-style: none;
+    background: #f1f1f1;
+    width: 300px;
+    height: 50px;
+    padding-left: 15px;
+    margin-bottom: 30px;
+    margin-top: 25px;
+    font-weight: 800;
+}
+.buyTicket .buyInner .buyCon option {
+    font-weight: 500;
+}
+.buyTicket .buyInner .buyCon select:hover {
+    cursor: pointer;
+    border: 2px solid rgb(49, 182, 49);
+}
+.buyTicket .buyInner .buyCon select:active {
+    border: 2px solid rgb(49, 182, 49);
+}
+.buyTicket .buyInner .buyCon select:focus {
+    outline: none;
+}
+.buyTicket .buyInner .buyCon .buyList {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    margin-bottom: 10px;
+}
+.buyTicket .buyInner .buyCon .goodsTotal {
+    position: relative;
+    box-sizing: border-box;
+    border-top: 1px solid #bdb7b7;
+    width: 100%;
+    height: 10%;
+    list-style: none;
+}
+.buyTicket .buyInner .buyCon .goodsTotal div {
+    position: relative;
+    box-sizing: border-box;
+    float: left;
+    width: 50%;
+    height: 100%;
+    line-height: 320%;
+    padding: 0 15px;
+}
+.buyTicket .buyInner .buyCon .goodsTotal .total {
+    /* border-right: 2px solid #000; */
+}
+.buyTicket .buyInner .buyCon .goodsTotal .price {
+    text-align: right;
+}
+.buyTicket .buyInner .buyCon .payBtn {
+    position: relative;
+    box-sizing: border-box;
+    top: 2.1%;
+    width: 100%;
+    height: 17.5%;
+}
+.buyTicket .buyInner .buyCon .payBtn button {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: olive;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    letter-spacing: .5em;
+    font-weight: 750;
+}
+.buyTicket .buyInner .buyCon .payBtn button:hover {
+    background-color: olivedrab;
+    letter-spacing: .6em;
+    transition: .2s;
+}
+
+
+/* footer */
+footer{
+    font-family: "GmarketSansMedium";
+    background-color: #333;
+    max-height: 200px;
+    position: relative;
+    top: 1800px;
+    border-top:1px solid #ddd;
+    /* background-position: bottom; */
+}
+footer > .foot_area{ position: relative; padding-bottom: 40px; }
+footer > .foot_area > .foot_list{ padding-top: 25px; text-align: center;}
+footer > .foot_area > .foot_list > li{ 
+    display: inline-block;
+   
+}
+footer > .foot_area > .foot_list > li > a {
+    content:'|';
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 10px;
+    color:whitesmoke;
+    position: relative;
+    top:-2px;
+}
+footer > .foot_area > .foot_list > li > a{
+    font-weight: bold;
+    font-size: 15px;
+}
+footer > .foot_area > h2{
+    padding-top: 25px;
+    font-size: 14px;
+    color:#666;
+}
+footer > .foot_area > .addr{
+    padding-top: 5px;
+    line-height: 1.4;
+    font-size: 13px;
+    color:#666;
+}
+footer > .foot_area > .addr > .space0{
+    letter-spacing: 0;
+}
+footer > .foot_area > .copy{
+    padding-top: 3px;
+    font-size: 13px;
+    color:#666;
+    letter-spacing: 0;
+}
+footer > .foot_area > .snslink{
+    position: absolute;
+    right:20px; top:50px;
+}
+footer > .foot_area > .snslink > li{
+    float:left;
+    margin-left: 60px;
+}
+footer > .foot_area > .snslink > li > a{
+    background:url(../images/ico_blog_r.png) no-repeat;
+    display: block;
+    width:50px;
+    height:74px;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+footer > .foot_area > .snslink > li+li > a{
+    background-image: url(../images/ico_facebook_r.png);
+}
+footer > .foot_area > .snslink > li+li+li > a{
+    background-image: url(../images/ico_instargram_r.png);
+}
+
+.foot_info{
+    text-align: center;
+    margin-top: 20px;
+}   
+
+
+
+.quick_area{
+    position: fixed;
+    top:171px;
+    right:0;
+    width:94px;
+    z-index: 100;
+}
+.quick_area > .quick_list > li{
+    text-align: center;
+    background-color: #282828;
+    font-size: 15px;
+}
+.quick_area > .quick_list > li > a{
+    display: block;
+    padding: 15px 0;
+    border-top: 1px solid #4d4d4d;
+}
+.quick_area > .quick_list > li:first-child > a{
+    border-top:none;
+}
+.quick_area > .quick_list > li > a > h3{
+    color:#ddd;
+    padding-bottom: 10px;
+    letter-spacing: -1px;
+}
+.quick_area > .quick_list > li:last-child > a > h3{
+    padding-bottom: 0;
+}
+.quick_area > .quick_list > li > a > p{
+    color:#fff;
+    line-height: 1.3;
+    font-size: 12px;
+}
+.to_top{
+    text-align: center;
+    background-color: #fff;
+}
+.to_top a{
+    display: block;
+    box-sizing: border-box;
+    height:45px;
+    text-indent: -9999px;
+    overflow: hidden;
+    border-left: 1px solid #a3a3a3;
+    border-bottom: 1px solid #a3a3a3;
+    background:url(../images/ico_totop.png) no-repeat center;
+    background-size: 50%;
+}
+
+
+/* ------메인 페이지(index.html) 끝------ */
